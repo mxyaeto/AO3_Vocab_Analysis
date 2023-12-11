@@ -69,8 +69,7 @@ while submit and retry_count < max_retries:
                 # nltk.download('stopwords')
                 stop_words = set(nltk.corpus.stopwords.words('english'))
                 # remove punctuation from text
-                # table = str.maketrans('', '', string.punctuation)
-                table = str.maketrans('', '', nltk.corpus.punkt)
+                table = str.maketrans('', '', string.punctuation)
                 # remove remaining tokens that are not alphabetic
                 text = nltk.word_tokenize(p.text)
                 stripped = [w.translate(table) for w in text]
