@@ -2,4 +2,4 @@ streamlit
 openai
 nltk
 pandas
-BeautifulSoup
+beautifulsoup4
