@@ -63,8 +63,8 @@ while submit and retry_count < max_retries:
                 full_article += p.text.strip() + ' '
                 # filter out stop words
                 # from nltk.corpus import stopwords
-                stw = nltk.download('stopwords')
-                stop_words = set(stw.words('english'))
+                # nltk.download('stopwords')
+                stop_words = set(nltk.download('stopwords').words('english'))
                 # remove punctuation from text
                 table = str.maketrans('', '', string.punctuation)
                 # remove remaining tokens that are not alphabetic
