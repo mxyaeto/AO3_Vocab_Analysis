@@ -55,6 +55,8 @@ while submit and retry_count < max_retries:
     author_tags = soup.findAll('h3', class_='byline heading')
     author = author_tags[0].text.strip()
 
+    nltk.download('stopwords')
+
     div_tags = soup.findAll('div', class_='userstuff')
     for div_tag in div_tags:
         p_list = div_tag.findAll('p')
@@ -64,7 +66,7 @@ while submit and retry_count < max_retries:
                 # filter out stop words
                 # from nltk.corpus import stopwords
                 # nltk.download('stopwords')
-                stop_words = set(nltk.download('stopwords').words('english'))
+                stop_words = set(nltk.corpus.stopwords.words('english'))
                 # remove punctuation from text
                 table = str.maketrans('', '', string.punctuation)
                 # remove remaining tokens that are not alphabetic
